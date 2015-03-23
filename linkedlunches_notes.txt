@@ -1,0 +1,77 @@
+LinkedInLunchs
+Idea: Can link in Facebook or LinkedIn to set up lunches among people or groups
+
+
+Possible Names: KindaFun, Linkr, FoodLink, LinkedLunches, FoodFriends
+
+Using meteor 
+Can use Facebook or LinkedIn
+What do we need: 
+1. Database
+	Need to store:
+	Persons
+	Interests
+	Resturants (Yelp)
+2. Accounts - Email, Facebook, LinkedIn
+3. Person Details: 
+	Name
+	Email
+	Fb auth token
+	LinkedIn
+	Interests
+	Food Preferences
+	Location (can possible show maps, for now maybe just zip codes)
+	Times
+	Phone #
+	Events - Upcoming events, could include past dates
+4. Event
+	People, Max People
+	Location
+	Time/date
+	url
+	interest
+	fp
+ 
+Interaction Flow of the App
+
+Create
+	Either create a new one and manually invite
+Explore	
+	Or create lunch with close people or those with interests that are similar
+
+Profile
+	Your profile
+Upcoming
+	Stuff that is upcoming
+
+
+Using Git
+Clone over SSH 
+make new: git checkout-b name_feature
+check current branch: git branch
+adding new files: git add file
+committing: git commit filenames(s) -m "message"
+synchronize: git pull 
+push: git push
+
+
+Necessary Assignments
+Landing Page
+Accounts (Need landing page first)
+Events Database
+Yelp (Need to do this before events)
+Facebook
+LinkedIn
+Create
+Profile Page (Eleisha)
+Upcoming
+
+
+Split up code into these categories (similar to the meteor tutorial format)
+client/
+	style.css
+	scripts.js
+server/
+	matching.js
+templates/
+	landing.html
