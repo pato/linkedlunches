@@ -51,4 +51,7 @@ Meteor.methods({
     }
     Events.insert(newEvent);
   },
+  deleteEvent: function (eventId) {
+    Events.remove(eventId);
+  },
 });
