@@ -3,19 +3,28 @@
 </head>
 
 <body>
-  <h1>Welcome to linkedlunches!</h1>
+    
 
-  <h1>Events!</h1>
+    
+</body>
+
+<template name="home">
+  <h1>Welcome to linkedlunches!</h1>
+</template>
+
+<template name="events">
+  <h1>Events</h1>
 
   {{#each events}}
     {{> event}}
   {{/each}}
-    
-  <h2>Login</h2>
-    {{> loginButtons}}
-    
-</body>
+</template>
 
 <template name="event">
   <a href="{{url}}">{{name}}</a>
+</template>
+
+<template name="login_buttons">
+  <h2>Login</h2>
+  {{> loginButtons}}
 </template>
