@@ -32,6 +32,8 @@ chance = new Chance()
  * }
  */
 
+/* Methods */
+
 Meteor.methods({
   /* Event methods */
   addEvent: function(name, max_people, event_location, event_datetime, interest) {
@@ -59,3 +61,4 @@ Meteor.methods({
     });
   }
 });
+
