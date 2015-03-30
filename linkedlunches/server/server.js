@@ -1,13 +1,17 @@
 Events = new Mongo.Collection("events");
 People = new Mongo.Collection("people");
 
+chance = new Chance()
+
 /**
  * Event structure
  * {
+ *  name: string,
  *  people: {},
  *  max_people: int,
- *  location: string,
- *  datetime: string,
+ *  event_location: string,
+ *  event_datetime: moment,
+ *  created_datetime: moment,
  *  url: string,
  *  interest: string,
  * }  
@@ -27,3 +31,24 @@ People = new Mongo.Collection("people");
  *  events: {}
  * }
  */
+
+Meteor.methods({
+  /* Event methods */
+  addEvent: function(name, max_people, event_location, event_datetime, interest) {
+    // Make sure the user is logged in before inserting
+    if (! Meteor.userId()) {
+      throw new Meteor.Error("not-authorized");
+    }
+    newEvent = {
+      name: name,
+      people: {},
+      max_people: max_people,
+      event_location: event_location,
+      event_datetime: event_datetime,
+      interest: interest,
+      created_datetime: moment(),
+      url: chance.word({syllables: 3})
+    }
+    Events.insert(newEvent);
+  },
+});
