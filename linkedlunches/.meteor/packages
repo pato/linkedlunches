@@ -9,3 +9,4 @@ autopublish
 insecure
 risul:chance
 momentjs:moment
+iron:router
