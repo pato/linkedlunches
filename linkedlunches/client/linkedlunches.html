@@ -6,9 +6,19 @@
   <h1>Welcome to Meteor!</h1>
 
   {{> hello}}
+
+  <h1>Events!</h1>
+
+  {{#each events}}
+    {{> event}}
+  {{/each}}
 </body>
 
 <template name="hello">
   <button>Click Me</button>
   <p>You've pressed the button {{counter}} times.</p>
+</template>
+
+<template name="event">
+  <a href="{{url}}">{{name}}</a>
 </template>
