@@ -35,10 +35,6 @@ chance = new Chance()
 Meteor.methods({
   /* Event methods */
   addEvent: function(name, max_people, event_location, event_datetime, interest) {
-    // Make sure the user is logged in before inserting
-    if (! Meteor.userId()) {
-      throw new Meteor.Error("not-authorized");
-    }
     newEvent = {
       name: name,
       people: {},
