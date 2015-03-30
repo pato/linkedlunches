@@ -7,7 +7,7 @@ chance = new Chance()
  * Event structure
  * {
  *  name: string,
- *  people: {},
+ *  people: [],
  *  max_people: int,
  *  event_location: string,
  *  event_datetime: moment,
@@ -54,4 +54,12 @@ Meteor.methods({
   deleteEvent: function (eventId) {
     Events.remove(eventId);
   },
+  addPerson: function(eventId, person) {
+    Events.update(eventId, { $push: { people: person} });    
+  },
+  addPeople: function(eventId, people) {
+    $.each(people, function (person) {
+      addPerson(eventId, person);
+    });
+  }
 });
